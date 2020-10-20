@@ -1,0 +1,10 @@
+{% extends "pages/base.html" %}
+{% block title %}Books{% endblock title %}
+{% block body %}
+    <div class = col>
+    <h1>{{book.name}}<a href="{% url 'book' book.id %}"></a></h1>
+    <h2>{{book.author}}</h2>
+    <h2>{{book.publisher}}</h2>
+    <p>{{book.cost}}</p>
+    <div>
+{% endblock body %}

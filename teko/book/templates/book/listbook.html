@@ -1,0 +1,13 @@
+{% extends "pages/base.html" %}
+{% block title %}Books{% endblock title %}
+{% block body %}
+{% for book in Books  %}
+    <div class = 'col-sm-4'>
+    <h1>Tên sách: {{book.name}}<a href="/listbook/{{book.id}}"></a></h1>
+    <h2>Tác giả: {{book.author}}</h2>
+    <h2>Nhà xuất bản: {{book.publisher}}</h2>
+    <p>Giá tiền: {{book.cost}} đồng</p>
+    </div>
+    <br/>
+{% endfor %}
+{% endblock body %}
