@@ -1,9 +1,14 @@
 from django.shortcuts import render
+from django.views import View
+
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'pages/home.html')
+class HomeView(View):
+    def get(self, request):
+        return render(request, 'pages/index.html')
 
-def login(request):
-    return render(request, 'pages/login.html')
+class TopSeller(View):
+    def get(self, request):
+        return render(request, 'pages/top-seller.html')
+
