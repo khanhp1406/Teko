@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from book.models import Book
+from django.views import View
+from .models import Book
+
+
 # Create your views here.
-def listView(request):
-    Data = {'Books':Book.objects.all()}
-    return render(request, 'book/listbook.html', Data)
+
+class BookListView(View):
+    def get(self, request, *args, **kwargs):
+        Data = {'Books': Book.objects.all()}
+        return render(request, 'book/listbook.html', context=Data)
