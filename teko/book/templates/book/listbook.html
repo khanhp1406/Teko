@@ -1,6 +1,7 @@
 {% extends "pages/base.html" %}
 {% block title %}Books{% endblock title %}
 {% block body %}
+<<<<<<< HEAD
 <div class="container-fluid px-md-5">
 	<div class="row">
 		{% for book in Books  %}
@@ -28,6 +29,162 @@
     					<span class="position" style="overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical;font-size:11px;">{{book.short_description}}</span>
     				</div>
     			</div>
+=======
+{% for book in Books  %}
+    <div class = 'col-sm-4'>
+    <h1>Tên sách: {{book.name}}<a href="/listbook/{{book.id}}"></a></h1>
+    <h2>Tác giả: {{book.author}}</h2>
+    <h2>Nhà xuất bản: {{book.publisher}}</h2>
+    <p>Giá tiền: {{book.cost}} đồng</p>
+    </div>
+    <br/>
+{% endfor %}
+{% endblock body %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Publishing Company - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static '/css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="{% static '/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  </head>
+  <body>
+
+  	<div class="container-fluid px-md-5  pt-4 pt-md-5">
+			<div class="row justify-content-between">
+				<div class="col-md-8 order-md-last">
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<a class="navbar-brand" href="/">Publishing <span>Company</span> <small>Book Publishing Company</small></a>
+						</div>
+						<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
+							<form action="#" class="searchform order-lg-last">
+			          <div class="form-group d-flex">
+			            <input type="text" class="form-control pl-3" placeholder="Search">
+			            <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+			          </div>
+			        </form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex">
+					<div class="social-media">
+		    		<p class="mb-0 d-flex">
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+		    		</p>
+	        </div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container-fluid">
+
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav m-auto">
+	        	<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="coming-soon.html" class="nav-link">Coming Soon</a></li>
+	        	<li class="nav-item"><a href="/top-seller" class="nav-link">Top Seller</a></li>
+	        	<li class="nav-item active"><a href="/book" class="nav-link">Books</a></li>
+	        	<li class="nav-item"><a href="author.html" class="nav-link">Author</a></li>
+	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'homepage/images/bg_5.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate mb-0 text-center">
+          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>Book Store <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Book Store</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center mb-4">
+          <div class="col-md-10">
+          	<div class="row mb-4">
+							<div class="col-md-12 d-flex justify-content-between align-items-center">
+								<h4 class="product-select">Select Types of Products</h4>
+								<select class="selectpicker" multiple>
+				          <option>Audio Books</option>
+				          <option>Business Books</option>
+				          <option>Children Books</option>
+				          <option>Cooking</option>
+				          <option>Lifestyles</option>
+				          <option>Mystery</option>
+				          <option>Romance</option>
+				          <option>Science Fiction</option>
+				          <option>History</option>
+				        </select>
+							</div>
+						</div>
+          </div>
+        </div>
+			</div>
+
+    	<div class="container-fluid px-md-5">
+    		<div class="row">
+				{% for book in Books  %}
+    			<div class="col-md-6 col-lg-4 d-flex">
+    				<div class="book-wrap d-lg-flex">
+    					<div class="img d-flex justify-content-end" style="background-image: url(images/book-1.jpg);">
+    						<div class="in-text">
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
+    								<span class="flaticon-shopping-cart"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to Wishlist">
+    								<span class="flaticon-heart-1"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">
+    								<span class="flaticon-search"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Compare">
+    								<span class="flaticon-visibility"></span>
+    							</a>
+    						</div>
+    					</div>
+    					<div class="text p-4">
+    						<p class="mb-2"><span class="price">{{book.cost}}</span></p>
+    						<h2><a href="/listbook/{{book.id}}">{{book.name}}</a></h2>
+    						<span class="position">By {{book.author}}</span>
+    					</div>
+    				</div>
+    			</div>
+				{% endfor %}
+
+>>>>>>> 62f5c2f459882e836f40dd5de3de02899a8ab7c4
     		</div>
 		{% endfor %}
 	</div>
