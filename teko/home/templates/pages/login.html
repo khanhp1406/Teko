@@ -1,37 +1,10 @@
-<!DOCTYPE html>
+{% load socialaccount %}
+{% providers_media_js %}
 <html>
-<head>
-<title>Facebook Login JavaScript Example</title>
-<meta charset="UTF-8">
-</head>
-<body>
-  <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=365370831329542&autoLogAppEvents=1" nonce="n8lOH71m"></script>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '365370831329542',
-      xfbml      : true,
-      version    : 'v8.0'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-<br>
-<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
-</body>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <a href = "{% provider_login_url 'facebook' method='js_sdk' %}">Facebook Login</a>
+    </body>
 </html>

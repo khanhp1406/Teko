@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -41,6 +42,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'home',
     'book',
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # providers
+    'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +133,43 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
 ]
+
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook':
+        {
+         'METHOD': 'oauth2',
+         'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+         'SCOPE': ['email', 'public_profile'],
+         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+         'INIT_PARAMS': {'cookie': True},
+         'FIELDS': [
+             'id',
+             'first_name',
+             'last_name',
+             'name',
+             'name_format',
+             'picture',
+             'short_name'
+         ],
+         'EXCHANGE_TOKEN': True,
+         'LOCALE_FUNC': lambda request: 'ru_RU',
+         'VERIFIED_EMAIL': False,
+         'VERSION': 'v8.0',
+         # you should fill in 'APP' only if you don't create a Facebook instance at /admin/socialaccount/socialapp/
+        'APP': {
+            'client_id': '365370831329542',
+            'secret': 'e7a8a90167229c8a49d71029e13f4076',
+            'key': ''
+            }
+        }
+}
+
+
+SITE_ID = 1

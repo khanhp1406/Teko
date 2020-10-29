@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from django.views import View
+from django.views.generic import ListView, DetailView
 from .models import Book
-
-
 # Create your views here.
 
-class BookListView(View):
-    def get(self, request, *args, **kwargs):
-        Data = {'Books': Book.objects.all()}
-        return render(request, 'book/listbook.html', context=Data)
+class BookListView(ListView):
+    queryset = Book.objects.all()
+    template_name = 'book/listbook.html'
+    context_object_name = 'Books'
+    paginate_by = 30

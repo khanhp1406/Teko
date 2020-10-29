@@ -6,9 +6,8 @@ from django.views import View
 
 class HomeView(View):
     def get(self, request):
-        return render(request, 'pages/index.html')
+        return render(request, 'pages/home.html')
 
-class TopSeller(View):
+class LoginView(View):
     def get(self, request):
-        return render(request, 'pages/top-seller.html')
-
+        return render(request, 'pages/login.html')

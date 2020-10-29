@@ -1,23 +1,29 @@
 from django.db import models
+
 # Create your models here.
-
-class Puplisher(models.Model):
-    name  = models.CharField(max_length=100)
-
-
-class Author(models.Model):
-    name = models.CharField(max_length=100)
-    books = models.ManyToManyField('Book', through='Authored')
-
 class Book(models.Model):
-    name = models.CharField(max_length=150)
-    authors = models.ManyToManyField('Author', through='Authored')
-    publisher = models.ForeignKey(Puplisher, on_delete=models.CASCADE)
-    cost = models.IntegerField()
+    id_tiki = models.IntegerField()
+    name = models.CharField(max_length=255)
+    category = models.CharField(max_length=255)
+    short_description = models.TextField()
+    price = models.IntegerField()
+    discount = models.IntegerField()
+    thumnail = models.CharField(max_length=500)
+    
+    class Meta:
+        managed = False
+        db_table = 'book'
 
-class Authored(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+class Bookdetail(models.Model):
+    id_tiki = models.IntegerField()
+    rating_average = models.FloatField()
+    review_count = models.IntegerField()
+    order_count = models.IntegerField()
+    book_cover = models.CharField(max_length=255)
+    publisher = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
 
-class Comment(models.Model):
-    tilte = models.CharField(max_length=100)
+    class Meta:
+        managed = False
+        db_table = 'bookdetail'
+

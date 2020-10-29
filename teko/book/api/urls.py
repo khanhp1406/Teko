@@ -1,8 +1,6 @@
-from django.urls import path
-from book.api.views import api_detail_blog_view
+from django.urls import path, include
+from .views import BookList
 
-app_name = 'book'
-
-urlpatterns = [
-    path('<slug>/', api_detail_blog_view, name = 'detail'),
+urlpattens = [
+    path('', BookList.as_view(), name = 'get')
 ]
