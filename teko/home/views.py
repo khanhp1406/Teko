@@ -1,8 +1,11 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
-
+import json
 
 # Create your views here.
+
+
 
 class HomeView(View):
     def get(self, request):

@@ -19,7 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6483459c-d2f9-4b21-906d-d0f904f80d62" name="Default Changelist" comment="" />
+    <list default="true" id="6483459c-d2f9-4b21-906d-d0f904f80d62" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teko/book/templates/book/listbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/teko/book/templates/book/listbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teko/home/templates/pages/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/teko/home/templates/pages/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teko/home/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/teko/home/templates/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teko/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/teko/home/templates/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teko/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/teko/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teko/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/teko/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teko/teko/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/teko/teko/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +54,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/teko/home/templates/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cb_dj_autocomplete" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -75,5 +84,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1604141186667">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1604141186667" />
   </component>
 </project>
