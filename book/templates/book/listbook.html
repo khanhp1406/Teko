@@ -1,0 +1,113 @@
+{% extends "pages/base.html" %}
+{% block title %}Books{% endblock title %}
+{% block body %}
+
+{% load static %}
+
+  <body>
+
+
+
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static '/images/bg_5.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate mb-0 text-center">
+          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>Book Store <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Book Store</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center mb-4">
+          <div class="col-md-10">
+          	<div class="row mb-4">
+							<div class="col-md-12 d-flex justify-content-between align-items-center">
+								<h4 class="product-select">Select Types of Products</h4>
+								<select class="selectpicker" multiple>
+				          <option>Audio Books</option>
+				          <option>Business Books</option>
+				          <option>Children Books</option>
+				          <option>Cooking</option>
+				          <option>Lifestyles</option>
+				          <option>Mystery</option>
+				          <option>Romance</option>
+				          <option>Science Fiction</option>
+				          <option>History</option>
+				        </select>
+							</div>
+						</div>
+          </div>
+        </div>
+			</div>
+
+    	<div class="container-fluid px-md-5">
+    		<div class="row">
+				{% for book in Books  %}
+    			<div class="col-md-6 col-lg-4 d-flex">
+    				<div class="book-wrap d-lg-flex">
+    					<div class="img d-flex justify-content-end" style="background-image: url({{book.thumnail}});">
+    						<div class="in-text">
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
+    								<span class="flaticon-shopping-cart"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to Wishlist">
+    								<span class="flaticon-heart-1"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">
+    								<span class="flaticon-search"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Compare">
+    								<span class="flaticon-visibility"></span>
+    							</a>
+    						</div>
+    					</div>
+    					<div class="text p-4 order-md-first">
+							<h5><a href="/listbook/{{book.id}}" style="color:Black;"><strong>{{book.name}}</strong></a></h5>
+    						<span class="position">Tác giả {{book.authors}}</span>
+
+							{% load humanize %}
+							<p class="mb-2"><span class="price">{{book.price|intcomma}} <ins>đ</ins></span></p>
+    					</div>
+    				</div>
+    			</div>
+				{% endfor %}
+			</div>
+
+
+		</div>
+
+	<nav aria-label="Page">
+  		<ul class="pagination">
+    		{% if page_obj.has_previous %}
+			<li>
+				<a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+        		<span aria-hidden="true">&laquo;</span>
+        		<span class="sr-only">Previous</span>
+      			</a>
+			</li>
+        	{% endif %}
+    		<li class="page-item">
+				<a class="page-link">
+				<span class="current">Page {{ page_obj.number }}</span>
+				</a>
+			</li>
+			{% if page_obj.has_next %}
+			<li class="page-item">
+		    	<a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+       				<span aria-hidden="true">&raquo;</span>
+        			<span class="sr-only">Next</span>
+				</a>
+			</li>
+        	{% endif %}
+  		</ul>
+	</nav>
+</div>
+</div>
+{% endblock body %}
+		</section>
