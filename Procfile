@@ -1,1 +1,1 @@
-web: gunicorn Teko.wsgi
+web: gunicorn teko.wsgi
