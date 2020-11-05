@@ -2,3 +2,4 @@
 django
 django-restframework
 djangorestframework
+django-allauth
