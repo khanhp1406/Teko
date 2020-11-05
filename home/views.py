@@ -6,15 +6,12 @@ from django.views import View
 from book.models import Book
 
 def autocomplete(request):
-    if 'term' in request.GET:
-
-        qs = Book.objects.filter(name__icontains=request.GET.get('term'))
-        books = list()
-        for product in qs:
-            books.append(product.name)
-        # titles = [product.title for product in qs]
-        return JsonResponse(books, safe=False)
-    return render(request, 'pages/home.html')
+    print(request.GET)
+    query_original = request.GET.get('term')
+    queryset = Book.objects.filter(name__icontains=query_original)
+    mylist = []
+    mylist += [x.name for x in queryset]
+    return JsonResponse(mylist , safe=False)
 
 
 class HomeView(View):
