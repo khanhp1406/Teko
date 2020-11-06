@@ -9,7 +9,10 @@ class Book(models.Model):
     price = models.IntegerField()
     discount = models.IntegerField()
     thumnail = models.CharField(max_length=500)
-    
+
+    def __str__(self):
+        return self.title
+
     class Meta:
         managed = False
         db_table = 'book'
