@@ -4,4 +4,4 @@ django-restframework
 djangorestframework
 django-allauth
 gunicorn
-whitenoise==2.0.6
+whitenoise
