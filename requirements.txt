@@ -4,4 +4,3 @@ django-restframework
 djangorestframework
 django-allauth
 gunicorn
-whitenoise
