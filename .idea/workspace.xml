@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6483459c-d2f9-4b21-906d-d0f904f80d62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/home/templates/pages/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,10 +85,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1604731838918">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1604732059532">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1604731838918" />
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1604732059532" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
