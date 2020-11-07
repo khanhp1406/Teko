@@ -1,36 +1,42 @@
 {% extends "pages/base.html" %}
 {% block title %}Books{% endblock title %}
 {% block body %}
-<div class="container-fluid px-md-5">
-	<div class="row">
-		{% for book in Books  %}
-			<div class="col-md-3 col-lg-3 d-flex">
-    			<div class="book-wrap d-lg-flex">
-    				<div class="img d-flex justify-content-end" style="background-image: url({{book.thumnail}});">
-    					<div class="in-text">
-    						<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
-    							<span class="flaticon-shopping-cart"></span>
-    						</a>
-    						<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to Wishlist">
-    							<span class="flaticon-heart-1"></span>
-    						</a>
-    						<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">
-    							<span class="flaticon-search"></span>
-    						</a>
-    						<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Compare">
-    							<span class="flaticon-visibility"></span>
-    						</a>
+   	<div class="container-fluid px-md-5">
+    		<div class="row">
+				{% for book in Books  %}
+    			<div class="col-md-6 col-lg-4 d-flex">
+    				<div class="book-wrap d-lg-flex">
+    					<div class="img d-flex justify-content-end" style="background-image: url({{book.thumnail}});">
+    						<div class="in-text">
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
+    								<span class="flaticon-shopping-cart"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to Wishlist">
+    								<span class="flaticon-heart-1"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">
+    								<span class="flaticon-search"></span>
+    							</a>
+    							<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Compare">
+    								<span class="flaticon-visibility"></span>
+    							</a>
+    						</div>
+    					</div>
+    					<div class="text p-4 order-md-first">
+							<h6><a href="/listbook/{{book.id}}" style="color:Black;"><strong>{{book.name}}</strong></a></h6>
+    						<span class="position">Tác giả {{bookdetail.author}}</span>
+
+							{% load humanize %}
+							<p class="mb-2"><span class="price">{{book.price|intcomma}} <ins>đ</ins></span></p>
     					</div>
     				</div>
-    				<div class="text p-4">
-    					<p class="mb-2"><span class="price">{{book.price}} ₫</span></p>
-    					<h2 style="font-size:13px;"><a href="#">{{book.name}}</a></h2>
-    					<span class="position" style="overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical;font-size:11px;">{{book.short_description}}</span>
-    				</div>
     			</div>
-    		</div>
-		{% endfor %}
-	</div>
+				{% endfor %}
+			</div>
+
+
+		</div>
+
 	<nav aria-label="Page">
   		<ul class="pagination">
     		{% if page_obj.has_previous %}
@@ -55,7 +61,11 @@
 			</li>
         	{% endif %}
   		</ul>
+		<span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 	</nav>
+
+
 </div>
 </div>
 {% endblock body %}
+		</section>
