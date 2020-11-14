@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView
 from .models import Book
 from django.db.models import Q
 from django.core.paginator import Paginator
+
 # Create your views here.
 
 class BookListView(ListView):
@@ -24,3 +25,11 @@ class SearchBookView(ListView):
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(results=self.results, **kwargs)
+
+class BookDetailView(DetailView):
+    model = Book
+    template_name = 'book/book_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(BookDetailView, self).get_context_data()
+        return context

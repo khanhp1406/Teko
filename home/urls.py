@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path, include
 from .views import HomeView, LoginView, autocomplete
-from book.views import BookListView, SearchBookView
+from book.views import BookListView, SearchBookView, BookDetailView
 from book.api.views import BookList
 from book.api.views import BookDetailAPI
 from django.contrib.auth import views as auth_views
@@ -22,4 +22,5 @@ urlpatterns = [
     path('api-book/', BookList.as_view()),
     path('api-book/<int:pk>', BookDetailAPI.as_view(), name = "Bookdetail"),
     path('accounts/', include('allauth.urls')),
+    path('detail/<int:pk>', BookDetailView.as_view(), name='book_detail')
 ]
