@@ -61,3 +61,16 @@ def dictfetchall(cursor):
         dict(zip([col[0] for col in desc], row))
         for row in cursor.fetchall()
     ]
+
+class CategoryList(ListView):
+
+    template_name = 'book/listbook.html'
+    context_object_name = 'Category'
+    paginate_by = 10
+    def get_queryset(self):
+        cursor = connections["default"].cursor()
+        cursor.execute("""SELECT DISTINCT book.category
+                          FROM book 
+                          """)
+        queryset = dictfetchall(cursor)
+        return queryset

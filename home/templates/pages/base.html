@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 
 	<title>{% block title %}{% endblock  %}</title>
 </head>
@@ -34,20 +34,9 @@
 							<a class="navbar-brand" href="/">Books <span>Store</span> <small>Sách cho mọi người</small></a>
 						</div>
 						<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-							<div id="filterContainer">
-								<li class="filterList">The loai 1</li>
-								<li class="filterList">The loai 2</li>
-								<li class="filterList">The loai 3</li>
-								<li class="filterList">The loai 3</li>
-								<li class="filterList">The loai 3</li>
-								<li class="filterList">The loai 3</li>
-								<li class="filterList">The loai 3</li>
-								<li class="filterList">The loai 3</li>
-
-							</div>
+							
 							<form action="{% url 'search_books' %}" class="searchform order-lg-last"  method="get">
 			            		<div class="form-group d-flex">
-									<i id="filterIcon" style="position: absolute; font-size: 25px; top: 1.6vh; left: 8vw;" class="fa fa-filter" aria-hidden="true"></i>
 			            			<input type="text" id="tags" class="form-control pl-3" placeholder="Search" name = 'q' >
 			            			<button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
 			            		</div>
@@ -102,10 +91,17 @@
 	        		<ul class="navbar-nav m-auto">
 	        			<li class="nav-item active"><a href="/" class="nav-link">Trang chủ</a></li>
 	        			<li class="nav-item"><a href="/top-seller" class="nav-link">Top Seller</a></li>
-	        			<li class="nav-item"><a href="/listbook" class="nav-link">Books</a></li>
-	        			<li class="nav-item"><a href="author.html" class="nav-link">Thể loại</a></li>
-						<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          			<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+						<li class="nav-item dropdown">
+        					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        						Thể loại
+      						</a>
+      						<div class="dropdown-menu">
+        						<a class="dropdown-item" href="/listbook">Tất cả</a>
+								{% comment %} lấy list category  {% endcomment %}
+        						<a class="dropdown-item" href="#">Sách tin học</a>
+        						<a class="dropdown-item" href="#">Truyện</a>
+      						</div>
+    					</li>
 	        		</ul>
 	    		</div>
 	    	</div>
