@@ -3,7 +3,7 @@
 {% block body %}
    	<div class="container-fluid px-md-5">
     		<div class="row">
-				{% for book in Books  %}
+				{% for book in results  %}
     			<div class="col-md-6 col-lg-4 d-flex">
     				<div class="book-wrap d-lg-flex">
     					<div class="img d-flex justify-content-end" style="background-image: url({{book.thumnail}});">
@@ -31,7 +31,10 @@
     					</div>
     				</div>
     			</div>
+				{% empty %}
+				<h1>There are no results for your query.</h1>
 				{% endfor %}
+
 			</div>
 
 

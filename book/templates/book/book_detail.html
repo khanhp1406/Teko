@@ -1,0 +1,42 @@
+{% extends "pages/base.html" %}
+{% block title %}Books{% endblock title %}
+{% block body %}
+{% load static %}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static '/images/bg_5.jpg'%});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate mb-0 text-center">
+          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/home">Home <i class="fa fa-chevron-right"></i></a></span> <span>{{book.category}} <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Book Detail</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<br>
+<br>
+<br>
+{% load humanize %}
+		<section class="ftco-section ftco-no-pt">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url({{book.thumnail}});">
+					</div>
+					<div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
+	          <div class="heading-section">
+	          	<span class="subheading">{{book.category}}</span>
+	            <h2 class="mb-4">{{book.name}}</h2>
+				<p class="mb-2"><span class="price" style="color:Red;">{{book.price|intcomma}} <ins>đ</ins></span></p>
+	            <p>{{book.short_description}}</p>
+
+
+	            <a href="#" class="btn btn-primary">Add to Cart</a>
+	          </div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock body %}
+		</section>
