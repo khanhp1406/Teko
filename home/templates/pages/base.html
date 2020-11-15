@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"
 
 	<title>{% block title %}{% endblock  %}</title>
 </head>
@@ -33,8 +34,20 @@
 							<a class="navbar-brand" href="/">Books <span>Store</span> <small>Sách cho mọi người</small></a>
 						</div>
 						<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-							<form action="{% url 'search_books' %}" class="searchform order-lg-last"  method="GET">
+							<div id="filterContainer">
+								<li class="filterList">The loai 1</li>
+								<li class="filterList">The loai 2</li>
+								<li class="filterList">The loai 3</li>
+								<li class="filterList">The loai 3</li>
+								<li class="filterList">The loai 3</li>
+								<li class="filterList">The loai 3</li>
+								<li class="filterList">The loai 3</li>
+								<li class="filterList">The loai 3</li>
+
+							</div>
+							<form action="{% url 'search_books' %}" class="searchform order-lg-last"  method="get">
 			            		<div class="form-group d-flex">
+									<i id="filterIcon" style="position: absolute; font-size: 25px; top: 1.6vh; left: 8vw;" class="fa fa-filter" aria-hidden="true"></i>
 			            			<input type="text" id="tags" class="form-control pl-3" placeholder="Search" name = 'q' >
 			            			<button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
 			            		</div>
@@ -168,7 +181,32 @@
 		</footer>
 	  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+	<script>
+		let filterIcon = document.getElementById('filterIcon')
+		let filterContainer = document.getElementById("filterContainer")
 
+		filterIcon.addEventListener("mouseover", () => {
+			filterIcon.style.cursor = "pointer"
+			filterIcon.style.color = "rgb(78, 78, 78)"
+		})
+		filterIcon.addEventListener("mouseout", () => {
+			filterIcon.style.color = "rgb(112, 112, 112)"
+		})
+		
+		filterIcon.addEventListener("click", () => {
+			if(filterContainer.style.opacity != 1) {
+				filterContainer.style.zIndex = 10
+				filterContainer.style.opacity = 1
+			} else {
+				filterContainer.style.zIndex = -10
+				filterContainer.style.opacity = 0
+			}
+			
+
+		})
+
+
+	</script>
 
   	<script src="{% static 'js/popper.min.js' %}"></script>
   	<script src="{% static 'js/bootstrap.min.js' %}"></script>
