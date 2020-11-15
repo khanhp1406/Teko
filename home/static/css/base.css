@@ -1,0 +1,32 @@
+#filterContainer {
+  background-color: black;
+  position: absolute;
+  top: 9vh;
+  width: 34vw;
+  height: fit-content;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 1vh 1vw 1vh 1vw;
+  justify-content: space-around;
+  z-index: -10;
+  opacity: 0;
+  flex-wrap: wrap;
+}
+
+.filterList {
+  text-decoration: none;
+  list-style-type: none;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 2px 6px 2px;
+  background-color: rgb(70, 70, 70);
+  z-index: 10;
+  color: white;
+}
+.filterList:hover {
+    cursor: pointer;
+    background-color: rgb(100, 100, 100);
+}
