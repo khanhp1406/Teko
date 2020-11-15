@@ -1,5 +1,5 @@
 {% load socialaccount %}
-{% providers_media_js %}
+{% comment %} {% providers_media_js %} {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +86,7 @@
 					</div>
 
 					<div class="login100-form-social flex-c-m">
-						<a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="login100-form-social-item flex-c-m bg1 m-r-5">
+						<a href="{% url 'social_django:begin' 'facebook' %}" class="login100-form-social-item flex-c-m bg1 m-r-5">
 							<i class="fa fa-facebook-f" aria-hidden="true"></i>
 						</a>
 

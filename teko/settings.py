@@ -26,7 +26,7 @@ SECRET_KEY = 'e4f7ffb90d19a05764ea6237fb5e84bec64d3677059eb95c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tekopj.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['tekopj.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home',
     'book',
     #allauth
+    'social_django',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -151,6 +152,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
 )
 
 SOCIALACCOUNT_PROVIDERS = {
@@ -183,5 +185,7 @@ SOCIALACCOUNT_PROVIDERS = {
         }
 }
 
-
+SOCIAL_AUTH_FACEBOOK_KEY ='2791356304483655'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'c38ed6249673b140f817af23967490f9'
 SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
