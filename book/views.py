@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Book, Bookdetail, UserClick
@@ -49,7 +49,7 @@ class BookDetailView(DetailView):
             user_id = self.request.user.id,
             book_id = context['object'].id_tiki
         )
-        user_click.save()
+       # user_click.save()
         return context
 
 
@@ -61,16 +61,3 @@ def dictfetchall(cursor):
         dict(zip([col[0] for col in desc], row))
         for row in cursor.fetchall()
     ]
-
-class CategoryList(ListView):
-
-    template_name = 'book/listbook.html'
-    context_object_name = 'Category'
-    paginate_by = 10
-    def get_queryset(self):
-        cursor = connections["default"].cursor()
-        cursor.execute("""SELECT DISTINCT book.category
-                          FROM book 
-                          """)
-        queryset = dictfetchall(cursor)
-        return queryset

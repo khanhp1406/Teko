@@ -98,8 +98,9 @@
       						<div class="dropdown-menu">
         						<a class="dropdown-item" href="/listbook">Tất cả</a>
 								{% comment %} lấy list category  {% endcomment %}
-        						<a class="dropdown-item" href="#">Sách tin học</a>
-        						<a class="dropdown-item" href="#">Truyện</a>
+								{% for category in Categorys %}
+									<a class="dropdown-item" href="#">{{ category.category }}</a>
+								{% endfor %}
       						</div>
     					</li>
 	        		</ul>
@@ -161,7 +162,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="container-fluid px-0 py-5 bg-black">
+					{% comment %} <div class="container-fluid px-0 py-5 bg-black">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
@@ -171,7 +172,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 				</div>
 			</div>
 		</footer>

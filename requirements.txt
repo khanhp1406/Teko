@@ -5,3 +5,4 @@ djangorestframework
 django-allauth
 gunicorn
 whitenoise
+social-auth-app-django

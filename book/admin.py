@@ -9,5 +9,6 @@ class BookAdmin(admin.ModelAdmin):
 class BookDetailAdmin(admin.ModelAdmin):
     list_display = ['id_tiki', 'rating_average', 'review_count', 'order_count', 'book_cover', 'publisher', 'author']
 
+
 admin.site.register(Book, BookAdmin)  
 admin.site.register(Bookdetail, BookDetailAdmin)

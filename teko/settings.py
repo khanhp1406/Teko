@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'e4f7ffb90d19a05764ea6237fb5e84bec64d3677059eb95c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['tekopj.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['tekopj.herokuapp.com']
 
 
 # Application definition

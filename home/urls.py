@@ -6,10 +6,8 @@ from book.api.views import BookList
 from book.api.views import BookDetailAPI
 from django.contrib.auth import views as auth_views
 
+
 from django.conf.urls import url
-
-
-
 
 
 urlpatterns = [
@@ -22,5 +20,5 @@ urlpatterns = [
     path('api-book/', BookList.as_view()),
     path('api-book/<int:pk>', BookDetailAPI.as_view(), name = "Bookdetail"),
     path('accounts/', include('social_django.urls', namespace = "social_django")),
-    path('detail/<int:pk>', BookDetailView.as_view(), name='book_detail')
+    path('detail/<int:pk>', BookDetailView.as_view(), name='book_detail'),
 ]

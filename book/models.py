@@ -27,7 +27,6 @@ class Book(models.Model):
         db_table = 'book'
 
 class UserClick(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
-    on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, default = 'id_tiki', on_delete=models.CASCADE)
     timeClick = models.DateTimeField(auto_now=True)
