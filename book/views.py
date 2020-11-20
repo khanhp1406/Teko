@@ -45,11 +45,12 @@ class BookDetailView(DetailView):
     def get_context_data(self, **kwargs):
         
         context = super(BookDetailView, self).get_context_data()
-        user_click = UserClick(
-            user_id = self.request.user.id,
-            book_id = context['object'].id_tiki
-        )
-       # user_click.save()
+        if self.request.user.is_authenticated:
+            user_click = UserClick(
+                user_id = self.request.user.id,
+                book_id = context['object'].id
+            )
+            user_click.save()
         return context
 
 
