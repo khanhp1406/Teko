@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'home',
     'book',
+    'django_elasticsearch_dsl',
     #allauth
     'social_django',
     'allauth',
@@ -52,7 +53,11 @@ INSTALLED_APPS = [
     # providers
     'allauth.socialaccount.providers.facebook',
 ]
-
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
 LOGIN_REDIRECT_URL ='/'
 
 MIDDLEWARE = [

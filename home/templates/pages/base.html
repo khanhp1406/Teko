@@ -35,9 +35,9 @@
 						</div>
 						<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
 							
-							<form action="{% url 'search_books' %}" class="searchform order-lg-last"  method="get">
+							<form action="{% url 'search' %}" class="searchform order-lg-last"  method="get">
 			            		<div class="form-group d-flex">
-			            			<input type="text" id="tags" class="form-control pl-3" placeholder="Search" name = 'q' >
+			            			<input type="text" id="q" class="form-control pl-3" placeholder="Search" name = 'q' >
 			            			<button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
 			            		</div>
 			        		</form>
@@ -49,7 +49,7 @@
 							<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 							<script>
 								$(function () {
-									$("#tags").autocomplete({
+									$("#q").autocomplete({
 
 										source: function( request, response ) {
 											  $.get('{% url 'autocomplete' %}', { term: request.term}, function(results) {
