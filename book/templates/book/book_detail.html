@@ -11,79 +11,38 @@
 			function (result) {
 				var books = result.rs;
 				books.forEach(book => {
-					console.log(book.name);
+					console.log(book);
 					// document.getElementById('aaron-family').innerHTML += '<li>' + book.name + '</li>';
 					document.getElementById('show').innerHTML +=
-			'<div class="col-md-6 col-lg-4 d-flex">' + 
-				'<div class="book-wrap d-lg-flex">' + 
-					'<div class="img d-flex justify-content-end"' + 
-						'style="background-image: url(' + book.thumnail + ');">' + 
-						'<div class="in-text">' + 
-							'<a href="#" class="icon d-flex align-items-center justify-content-center"' + 
-								'data-toggle="tooltip" data-placement="left" title="Add to cart">' +
-								'<span class="flaticon-shopping-cart"></span>' + 
-							'</a>' + 
-							'<a href="#" class="icon d-flex align-items-center justify-content-center"' +
-								'data-toggle="tooltip" data-placement="left" title="Add to Wishlist">' + 
-								'<span class="flaticon-heart-1"></span> \
-							</a> \
-							<a href="#" class="icon d-flex align-items-center justify-content-center" \
-								data-toggle="tooltip" data-placement="left" title="Quick View"> \
-								<span class="flaticon-search"></span> \
-							</a> \
-							<a href="#" class="icon d-flex align-items-center justify-content-center" \
-								data-toggle="tooltip" data-placement="left" title="Compare"> \
-								<span class="flaticon-visibility"></span> \
-							</a> \
-						</div> \
-					</div> \
-					<div class="text p-4"> \
-						<p class="mb-2"><span class="price">' + book.price + '</span></p> \
-						<h2><a href="/detail/' + book.id + '">' + book.name + '</a></h2> \
-						<span class="position">By John Nathan Muller</span> \
-					</div> \
-				</div> \
-			</div>';
-
+						'<div class="col-md-5 col-lg-4 d-flex">\
+    						<div class="book-wrap d-lg-flex">\
+    							<div class="img d-flex justify-content-end" style="background-image: url('+book.thumnail+');">\
+    								<div class="in-text">\
+    									<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">\
+    										<span class="flaticon-shopping-cart"></span>\
+    									</a>\
+    									<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to Wishlist">\
+    										<span class="flaticon-heart-1"></span>\
+    									</a>\
+    									<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">\
+    										<span class="flaticon-search"></span>\
+    									</a>\
+    									<a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Compare">\
+    										<span class="flaticon-visibility"></span>\
+    									</a>\
+    								</div>\
+    							</div>\
+    						<div class="text p-4 order-md-first">\
+								<h6><a href="/detail/'+book.id+'" style="color:Black;"><small><strong>'+book.name+'</strong></small></a></h6>\
+    								<span class="position">Tác giả:'+book.author+'</span>\
+								<p class="mb-2"><span class="price">'+(book.price/1000).toFixed(3)+' <ins>đ</ins></span></p>\
+								<span class="position" style="overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical;font-size:11px;">'+book.short_description+'</span>\
+    						</div>\
+    					</div>\
+    				</div>';
 				})
 
-				// console.log(list_book);
-				// list_book.forEach(book => {
-				// 	var el_down = document.getElementById("GFG_DOWN"); 
-				// 	el_down.innerHTML = book.name; 
-				// 	console.log(book.name);
-				// })
-				// return list_book
-			}
-		)
-
-		// 		result.data.forEach(function (element, index, array) {
-
-		// 			$.getJSON(get_url(element.target), function (result) {
-		// 				image_url = 'http://image.tmdb.org/t/p/w500/'
-		// 					+ result.movie_results[0].poster_path
-
-		// 				rec_div = document.createElement('div')
-		// 				rec_div.setAttribute('class', "col-sm-2 img-responsive")
-
-		// 				a = document.createElement('a')
-		// 				a.setAttribute('href', '/movies/movie/' + element.target)
-
-		// 				img = document.createElement('img')
-		// 				img.setAttribute('src', image_url)
-		// 				img.setAttribute('class', "img-responsive")
-		// 				a.appendChild(img)
-
-		// 				rec_div.appendChild(a)
-
-		// 				recs = document.getElementById('content_based_recs')
-		// 				recs.appendChild(rec_div)
-		// 				recs.style.visibility = 'visible'
-		// 			})
-
-		// 		})
-		// 	});
-
+	})
 	}
 
 </script>
