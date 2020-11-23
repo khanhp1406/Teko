@@ -10,10 +10,43 @@
 		$.getJSON(url,
 			function (result) {
 				var books = result.rs;
-				for (var book in books) {
+				books.forEach(book => {
 					console.log(book.name);
-					document.getElementById('aaron-family').innerHTML += '<li>' + book.name + '</li>';
-				}
+					// document.getElementById('aaron-family').innerHTML += '<li>' + book.name + '</li>';
+					document.getElementById('show').innerHTML +=
+			'<div class="col-md-6 col-lg-4 d-flex">' + 
+				'<div class="book-wrap d-lg-flex">' + 
+					'<div class="img d-flex justify-content-end"' + 
+						'style="background-image: url(' + book.thumnail + ');">' + 
+						'<div class="in-text">' + 
+							'<a href="#" class="icon d-flex align-items-center justify-content-center"' + 
+								'data-toggle="tooltip" data-placement="left" title="Add to cart">' +
+								'<span class="flaticon-shopping-cart"></span>' + 
+							'</a>' + 
+							'<a href="#" class="icon d-flex align-items-center justify-content-center"' +
+								'data-toggle="tooltip" data-placement="left" title="Add to Wishlist">' + 
+								'<span class="flaticon-heart-1"></span> \
+							</a> \
+							<a href="#" class="icon d-flex align-items-center justify-content-center" \
+								data-toggle="tooltip" data-placement="left" title="Quick View"> \
+								<span class="flaticon-search"></span> \
+							</a> \
+							<a href="#" class="icon d-flex align-items-center justify-content-center" \
+								data-toggle="tooltip" data-placement="left" title="Compare"> \
+								<span class="flaticon-visibility"></span> \
+							</a> \
+						</div> \
+					</div> \
+					<div class="text p-4"> \
+						<p class="mb-2"><span class="price">' + book.price + '</span></p> \
+						<h2><a href="/detail/' + book.id + '">' + book.name + '</a></h2> \
+						<span class="position">By John Nathan Muller</span> \
+					</div> \
+				</div> \
+			</div>';
+
+				})
+
 				// console.log(list_book);
 				// list_book.forEach(book => {
 				// 	var el_down = document.getElementById("GFG_DOWN"); 
@@ -99,6 +132,18 @@
 	</div>
 	<ul id="aaron-family">
 	</ul>
+</section>
+<section class="ftco-section ftco-no-pt">
+	<div class="container-fluid px-md-4">
+		<div class="row justify-content-center pb-5 mb-3">
+			<div class="col-md-7 heading-section text-center ftco-animate">
+				<span class="subheading">Sách</span>
+				<h2>Tương tự</h2>
+			</div>
+		</div>
+		<div class="row" id="show">
+			
+		</div>
 </section>
 <script>
 	get_cb_recs('{{ book.id_tiki }}')
