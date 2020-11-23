@@ -22,5 +22,5 @@ urlpatterns = [
     path('api-book/<int:pk>', BookDetailAPI.as_view(), name = "Bookdetail"),
     path('accounts/', include('social_django.urls', namespace = "social_django")),
     path('detail/<int:pk>', BookDetailView.as_view(), name='book_detail'),
-    path('rec_content/', RecommendBookBySimilarityView.as_view(), name='content_rs')
+    path('detail/rec_content/', RecommendBookBySimilarityView.as_view(), name='content_rs')
 ]

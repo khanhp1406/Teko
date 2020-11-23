@@ -74,16 +74,18 @@ class RecommendBookBySimilarityView(APIView):
         rs_title_books = Book.objects.filter(id_tiki__in=id_by_title)
         rs_des_books = Book.objects.filter(id_tiki__in=id_by_des)
 
-        rs_title_books_data = []
+        # rs_title_books_data = []
+        rs_books = []
         for book in rs_title_books:
             data = BookSerializer(book).data
-            rs_title_books_data.append(data)
+            rs_books.append(data)
 
         rs_des_books_data = []
         for book in rs_des_books:
             data = BookSerializer(book).data
-            rs_des_books_data.append(data)
-        return Response({'rs_by_title': rs_title_books_data, 'rs_by_des': rs_des_books_data})
+            rs_books.append(data)
+        # return Response({'rs_by_title': rs_title_books_data, 'rs_by_des': rs_des_books_data})
+        return Response({'rs': rs_books})
 
 
 def dictfetchall(cursor):
