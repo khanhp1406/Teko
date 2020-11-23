@@ -9,10 +9,21 @@
 
 		$.getJSON(url,
 			function (result) {
-				var list_book = result.rs 
-				console.log(list_book)
+				var books = result.rs;
+				for (var book in books) {
+					console.log(book.name);
+					document.getElementById('aaron-family').innerHTML += '<li>' + book.name + '</li>';
+				}
+				// console.log(list_book);
+				// list_book.forEach(book => {
+				// 	var el_down = document.getElementById("GFG_DOWN"); 
+				// 	el_down.innerHTML = book.name; 
+				// 	console.log(book.name);
+				// })
+				// return list_book
 			}
 		)
+
 		// 		result.data.forEach(function (element, index, array) {
 
 		// 			$.getJSON(get_url(element.target), function (result) {
@@ -86,13 +97,12 @@
 			</div>
 		</div>
 	</div>
+	<ul id="aaron-family">
+	</ul>
 </section>
-<div id="content_based_recs" class="row" style="visibility: hidden">
-	<h2>Similar content</h2>
-
-</div>
 <script>
 	get_cb_recs('{{ book.id_tiki }}')
+
 </script>
 {% endblock body %}
 </section>
