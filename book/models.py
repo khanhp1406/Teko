@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+import json
 # Create your models here.
 class Bookdetail(models.Model):
     id_tiki = models.IntegerField()
@@ -30,3 +31,21 @@ class UserClick(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, default = 'id_tiki', on_delete=models.CASCADE)
     timeClick = models.DateTimeField(auto_now=True)
+
+class ContentSimilarityBook(models.Model):
+    id_tiki = models.IntegerField()
+    title_similarity = models.CharField(max_length=255)
+    descript_similarity = models.CharField(max_length=255)
+        
+    def set_title_similarity(self, x):
+        self.title_similarity = json.dumps(x)
+
+    def get_title_similarity(self):
+        return json.loads(self.title_similarity)
+    
+    def set_descript_similarity(self, x):
+        self.descript_similarity = json.dumps(x)
+
+    def get_descript_similarity(self):
+        print(self.descript_similarity)
+        return json.loads(self.descript_similarity[:-1])

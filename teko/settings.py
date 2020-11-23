@@ -27,7 +27,7 @@ SECRET_KEY = 'e4f7ffb90d19a05764ea6237fb5e84bec64d3677059eb95c'
 DEBUG = True
 
 ALLOWED_HOSTS = ['tekopj.herokuapp.com', 'localhost', '127.0.0.1']
-
+# SECURE_SSL_REDIRECT = True
 
 # Application definition
 
