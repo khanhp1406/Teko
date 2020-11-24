@@ -2,7 +2,7 @@ from django_elasticsearch_dsl import Document,Text
 from django_elasticsearch_dsl.registries import registry
 from elasticsearch_dsl import Index
 from book.models import Book
-from elasticsearch_dsl import  analyzer
+from elasticsearch_dsl import analyzer
 from elasticsearch import Elasticsearch
 
 es = Elasticsearch()
