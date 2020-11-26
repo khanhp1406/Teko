@@ -23,7 +23,7 @@ class BookListView(ListView):
         cursor.execute("""SELECT *
                           FROM book as b
                           INNER JOIN bookdetail as bd
-                              ON (b.id_tiki = bd.id_tiki)
+                              ON (b.id_tiki = bd.id_tiki) ORDER BY bd.review_count DESC
                           """)
         queryset = dictfetchall(cursor)
 
